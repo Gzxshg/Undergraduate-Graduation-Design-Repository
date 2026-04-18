@@ -3,3 +3,5 @@ MST-plus-plus/dataset/Train_Spec
 MST-plus-plus/dataset/Train_RGB
 MST-plus-plus/dataset/Valid_RGB
 MST-plus-plus/dataset/Valid_Spec
+MST-plus-plus/train_code/__pycache__
+MST-plus-plus/train_code/architecture/__pycache__

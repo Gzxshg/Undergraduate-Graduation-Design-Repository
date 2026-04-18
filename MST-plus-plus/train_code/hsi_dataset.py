@@ -20,7 +20,7 @@ class TrainDataset(Dataset):
         bgr_data_path = f'{data_root}/Train_RGB/'
 
         with open(f'{data_root}/split_txt/train_list.txt', 'r') as fin:
-            hyper_list = [line.replace('.jpg','.mat') for line in fin]
+            hyper_list = [line.replace('.jpg\n','.mat') for line in fin]
             bgr_list = [line.replace('mat','jpg') for line in hyper_list]
         hyper_list.sort()
         bgr_list.sort()
@@ -84,10 +84,10 @@ class ValidDataset(Dataset):
     def __init__(self, data_root, bgr2rgb=True):
         self.hypers = []
         self.bgrs = []
-        hyper_data_path = f'{data_root}/Train_Spec/'
-        bgr_data_path = f'{data_root}/Train_RGB/'
+        hyper_data_path = f'{data_root}/Valid_Spec/'
+        bgr_data_path = f'{data_root}/Valid_RGB/'
         with open(f'{data_root}/split_txt/valid_list.txt', 'r') as fin:
-            hyper_list = [line.replace('.jpg', '.mat') for line in fin]
+            hyper_list = [line.replace('.jpg\n', '.mat') for line in fin]
             bgr_list = [line.replace('mat','jpg') for line in hyper_list]
         hyper_list.sort()
         bgr_list.sort()
