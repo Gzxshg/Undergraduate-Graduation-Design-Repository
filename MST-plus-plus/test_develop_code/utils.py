@@ -30,7 +30,7 @@ class Loss_MRAE(nn.Module):
     def forward(self, outputs, label):
         assert outputs.shape == label.shape
         error = torch.abs(outputs - label) / label
-        mrae = torch.mean(error.view(-1))
+        mrae = torch.mean(error.contiguous().view(-1))
         return mrae
 
 class Loss_RMSE(nn.Module):
@@ -41,7 +41,7 @@ class Loss_RMSE(nn.Module):
         assert outputs.shape == label.shape
         error = outputs-label
         sqrt_error = torch.pow(error,2)
-        rmse = torch.sqrt(torch.mean(sqrt_error.view(-1)))
+        rmse = torch.sqrt(torch.mean(sqrt_error.contiguous().view(-1)))
         return rmse
 
 class Loss_PSNR(nn.Module):
