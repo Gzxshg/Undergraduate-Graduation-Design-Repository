@@ -43,7 +43,7 @@ def compute_psnr_for_dirs(gt_dir, rec_dir, max_val=1.0):
 
 if __name__ == "__main__":
     gt_dir = "/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/MST-plus-plus/dataset/Valid_Spec"       # 真实图像 mat 文件目录
-    rec_dir = "/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/MST-plus-plus/exp/MST_Plus_Plus/202604192019"     # 预测/重建 mat 文件目录
+    rec_dir = "/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/MST-plus-plus/exp/MST_Plus_Plus/MymodelResults"     # 预测/重建 mat 文件目录
     max_val = 1.0                             # 如果数据范围是 0~1；若是 0~255，就用 255
 
     all_psnr = compute_psnr_for_dirs(gt_dir, rec_dir, max_val=max_val)
