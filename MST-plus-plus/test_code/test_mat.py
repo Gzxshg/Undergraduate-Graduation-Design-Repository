@@ -13,7 +13,7 @@ from PIL import Image
 
 parser= argparse.ArgumentParser(description="Spectral Recovery Toolbox")
 parser.add_argument('--method', type=str, default='bisrnet_plus_plus')
-parser.add_argument('--pretrained_model_path', type=str, default='/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/MST-plus-plus/test_code/modelzoo/net_300epoch.pth')
+parser.add_argument('--pretrained_model_path', type=str, default='/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/MST-plus-plus/test_code/modelzoo/mst_plus_plus.pth')
 parser.add_argument('--patch_size', type=int, default=128, help='the patch size of input RGB images')
 parser.add_argument('--outf', type=str, default='/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/MST-plus-plus/exp/MST_Plus_Plus/', help='path log files')
 parser.add_argument('--data_root', type=str, default='/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/MST-plus-plus/dataset', help='the path of dataset')
@@ -60,7 +60,7 @@ with torch.no_grad():
         output = model(rgb)
         result = output
         result=result.clamp(min=0., max=1.)
-        res=res = result.cpu().permute(2,3,1,0).squeeze(3).numpy()
+        res = result.cpu().permute(2,3,1,0).squeeze(3).numpy()
         save_path = opt.outf + '/' + array[i] + '.mat'
         from scipy.io import savemat
         savemat(save_path, {'result': res})

@@ -27,7 +27,6 @@ def compute_ssim_for_dirs(gt_dir, rec_dir, max_val=1.0):
 
         if gt_arr.shape != rec_arr.shape:
             raise ValueError(f"{name} 形状不一致：{gt_arr.shape} vs {rec_arr.shape}")
-
         ssim_value = ssim(gt_arr, rec_arr,data_range=max_val)  # 计算 SSIM 值
 
         results.append((name, ssim_value))
@@ -36,7 +35,7 @@ def compute_ssim_for_dirs(gt_dir, rec_dir, max_val=1.0):
 
 if __name__ == "__main__":
     gt_dir = "/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/MST-plus-plus/dataset/Valid_Spec"       # 真实图像 mat 文件目录
-    rec_dir = "/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/MST-plus-plus/exp/MST_Plus_Plus/MymodelResults"     # 预测/重建 mat 文件目录
+    rec_dir = "/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/MST-plus-plus/exp/MST_Plus_Plus/202604202235"     # 预测/重建 mat 文件目录
     max_val = 1.0                             # 如果数据范围是 0~1；若是 0~255，就用 255
 
     all_ssim = compute_ssim_for_dirs(gt_dir, rec_dir, max_val=max_val)
