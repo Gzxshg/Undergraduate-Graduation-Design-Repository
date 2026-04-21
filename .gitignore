@@ -13,3 +13,5 @@ MST-plus-plus/test_develop_code/architecture/__pycache__
 how_prune/evaluate_code/architecture/__pycache__
 how_prune/evaluate_code/__pycache__
 how_prune/evaluate_code/mats
+.vscode
+how_prune/execute_code/architecture/__pycache__

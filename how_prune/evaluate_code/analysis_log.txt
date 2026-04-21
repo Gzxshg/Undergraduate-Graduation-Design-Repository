@@ -1,0 +1,651 @@
+会同时打印在终端 + 写入txt
+load model from /root/autodl-tmp/Undergraduate-Graduation-Design-Repository/MST-plus-plus/test_code/modelzoo/net_300epoch.pth
+>>> 启动受限架构下的模块级敏感度分析...
+[Baseline] 初始模型性能指标: SSIM=0.9302, PSNR=30.6846
+
+正在分析受支持层: conv_in | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0298, PSNR=0.5210
+
+正在分析受支持层: body.0.embedding | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0003, PSNR=0.0945
+
+正在分析受支持层: body.0.encoder_layers.0.0.blocks.0.0.to_q | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0000, PSNR=-0.0011
+
+正在分析受支持层: body.0.encoder_layers.0.0.blocks.0.0.to_k | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0000, PSNR=-0.0064
+
+正在分析受支持层: body.0.encoder_layers.0.0.blocks.0.0.to_v | 类型: Linear
+  -> 掉点幅度: SSIM=0.0000, PSNR=-0.0016
+
+正在分析受支持层: body.0.encoder_layers.0.0.blocks.0.0.proj | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0001, PSNR=-0.0107
+
+正在分析受支持层: body.0.encoder_layers.0.0.blocks.0.0.pos_emb.0 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0000, PSNR=0.0018
+
+正在分析受支持层: body.0.encoder_layers.0.0.blocks.0.0.pos_emb.2 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0001, PSNR=-0.0081
+
+正在分析受支持层: body.0.encoder_layers.0.0.blocks.0.1.fn.net.0 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0000, PSNR=-0.0418
+
+正在分析受支持层: body.0.encoder_layers.0.0.blocks.0.1.fn.net.2 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0003, PSNR=-0.0121
+
+正在分析受支持层: body.0.encoder_layers.0.0.blocks.0.1.fn.net.4 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0001, PSNR=0.0278
+
+正在分析受支持层: body.0.encoder_layers.0.1 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0001, PSNR=0.0117
+
+正在分析受支持层: body.0.encoder_layers.1.0.blocks.0.0.to_q | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0000, PSNR=-0.0005
+
+正在分析受支持层: body.0.encoder_layers.1.0.blocks.0.0.to_k | 类型: Linear
+  -> 掉点幅度: SSIM=0.0000, PSNR=0.0027
+
+正在分析受支持层: body.0.encoder_layers.1.0.blocks.0.0.to_v | 类型: Linear
+  -> 掉点幅度: SSIM=0.0000, PSNR=0.0081
+
+正在分析受支持层: body.0.encoder_layers.1.0.blocks.0.0.proj | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0001, PSNR=-0.0083
+
+正在分析受支持层: body.0.encoder_layers.1.0.blocks.0.0.pos_emb.0 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0000, PSNR=-0.0082
+
+正在分析受支持层: body.0.encoder_layers.1.0.blocks.0.0.pos_emb.2 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0000, PSNR=0.0089
+
+正在分析受支持层: body.0.encoder_layers.1.0.blocks.0.1.fn.net.0 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0003, PSNR=-0.0128
+
+正在分析受支持层: body.0.encoder_layers.1.0.blocks.0.1.fn.net.2 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0001, PSNR=0.0479
+
+正在分析受支持层: body.0.encoder_layers.1.0.blocks.0.1.fn.net.4 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0001, PSNR=0.0043
+
+正在分析受支持层: body.0.encoder_layers.1.1 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0000, PSNR=0.0044
+
+正在分析受支持层: body.0.bottleneck.blocks.0.0.to_q | 类型: Linear
+  -> 掉点幅度: SSIM=0.0000, PSNR=0.0048
+
+正在分析受支持层: body.0.bottleneck.blocks.0.0.to_k | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0000, PSNR=-0.0055
+
+正在分析受支持层: body.0.bottleneck.blocks.0.0.to_v | 类型: Linear
+  -> 掉点幅度: SSIM=0.0000, PSNR=0.0014
+
+正在分析受支持层: body.0.bottleneck.blocks.0.0.proj | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0000, PSNR=0.0092
+
+正在分析受支持层: body.0.bottleneck.blocks.0.0.pos_emb.0 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0000, PSNR=0.0056
+
+正在分析受支持层: body.0.bottleneck.blocks.0.0.pos_emb.2 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0000, PSNR=-0.0057
+
+正在分析受支持层: body.0.bottleneck.blocks.0.1.fn.net.0 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0001, PSNR=-0.0149
+
+正在分析受支持层: body.0.bottleneck.blocks.0.1.fn.net.2 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0000, PSNR=-0.0411
+
+正在分析受支持层: body.0.bottleneck.blocks.0.1.fn.net.4 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0000, PSNR=0.0094
+
+正在分析受支持层: body.0.decoder_layers.0.0 | 类型: ConvTranspose2d
+  -> 掉点幅度: SSIM=0.0000, PSNR=0.0073
+
+正在分析受支持层: body.0.decoder_layers.0.1 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0000, PSNR=0.0445
+
+正在分析受支持层: body.0.decoder_layers.0.2.blocks.0.0.to_q | 类型: Linear
+  -> 掉点幅度: SSIM=0.0000, PSNR=-0.0042
+
+正在分析受支持层: body.0.decoder_layers.0.2.blocks.0.0.to_k | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0000, PSNR=-0.0022
+
+正在分析受支持层: body.0.decoder_layers.0.2.blocks.0.0.to_v | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0000, PSNR=-0.0001
+
+正在分析受支持层: body.0.decoder_layers.0.2.blocks.0.0.proj | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0000, PSNR=-0.0028
+
+正在分析受支持层: body.0.decoder_layers.0.2.blocks.0.0.pos_emb.0 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0000, PSNR=0.0009
+
+正在分析受支持层: body.0.decoder_layers.0.2.blocks.0.0.pos_emb.2 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0000, PSNR=0.0027
+
+正在分析受支持层: body.0.decoder_layers.0.2.blocks.0.1.fn.net.0 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0000, PSNR=0.0298
+
+正在分析受支持层: body.0.decoder_layers.0.2.blocks.0.1.fn.net.2 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0001, PSNR=-0.0126
+
+正在分析受支持层: body.0.decoder_layers.0.2.blocks.0.1.fn.net.4 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0000, PSNR=0.0172
+
+正在分析受支持层: body.0.decoder_layers.1.0 | 类型: ConvTranspose2d
+  -> 掉点幅度: SSIM=-0.0000, PSNR=-0.0045
+
+正在分析受支持层: body.0.decoder_layers.1.1 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0001, PSNR=-0.0215
+
+正在分析受支持层: body.0.decoder_layers.1.2.blocks.0.0.to_q | 类型: Linear
+  -> 掉点幅度: SSIM=0.0000, PSNR=0.0005
+
+正在分析受支持层: body.0.decoder_layers.1.2.blocks.0.0.to_k | 类型: Linear
+  -> 掉点幅度: SSIM=0.0000, PSNR=0.0025
+
+正在分析受支持层: body.0.decoder_layers.1.2.blocks.0.0.to_v | 类型: Linear
+  -> 掉点幅度: SSIM=0.0000, PSNR=0.0030
+
+正在分析受支持层: body.0.decoder_layers.1.2.blocks.0.0.proj | 类型: Linear
+  -> 掉点幅度: SSIM=0.0001, PSNR=0.0027
+
+正在分析受支持层: body.0.decoder_layers.1.2.blocks.0.0.pos_emb.0 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0000, PSNR=0.0015
+
+正在分析受支持层: body.0.decoder_layers.1.2.blocks.0.0.pos_emb.2 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0000, PSNR=-0.0024
+
+正在分析受支持层: body.0.decoder_layers.1.2.blocks.0.1.fn.net.0 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0002, PSNR=0.0490
+
+正在分析受支持层: body.0.decoder_layers.1.2.blocks.0.1.fn.net.2 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0001, PSNR=0.0517
+
+正在分析受支持层: body.0.decoder_layers.1.2.blocks.0.1.fn.net.4 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0003, PSNR=-0.0422
+
+正在分析受支持层: body.0.mapping | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0007, PSNR=0.0518
+
+正在分析受支持层: body.1.embedding | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0004, PSNR=0.1240
+
+正在分析受支持层: body.1.encoder_layers.0.0.blocks.0.0.to_q | 类型: Linear
+  -> 掉点幅度: SSIM=0.0000, PSNR=0.0019
+
+正在分析受支持层: body.1.encoder_layers.0.0.blocks.0.0.to_k | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0000, PSNR=0.0065
+
+正在分析受支持层: body.1.encoder_layers.0.0.blocks.0.0.to_v | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0000, PSNR=-0.0059
+
+正在分析受支持层: body.1.encoder_layers.0.0.blocks.0.0.proj | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0001, PSNR=-0.0144
+
+正在分析受支持层: body.1.encoder_layers.0.0.blocks.0.0.pos_emb.0 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0000, PSNR=0.0113
+
+正在分析受支持层: body.1.encoder_layers.0.0.blocks.0.0.pos_emb.2 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0001, PSNR=-0.0294
+
+正在分析受支持层: body.1.encoder_layers.0.0.blocks.0.1.fn.net.0 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0009, PSNR=0.1840
+
+正在分析受支持层: body.1.encoder_layers.0.0.blocks.0.1.fn.net.2 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0004, PSNR=0.0329
+
+正在分析受支持层: body.1.encoder_layers.0.0.blocks.0.1.fn.net.4 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0003, PSNR=-0.0541
+
+正在分析受支持层: body.1.encoder_layers.0.1 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0005, PSNR=-0.0221
+
+正在分析受支持层: body.1.encoder_layers.1.0.blocks.0.0.to_q | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0000, PSNR=0.0068
+
+正在分析受支持层: body.1.encoder_layers.1.0.blocks.0.0.to_k | 类型: Linear
+  -> 掉点幅度: SSIM=0.0001, PSNR=-0.0041
+
+正在分析受支持层: body.1.encoder_layers.1.0.blocks.0.0.to_v | 类型: Linear
+  -> 掉点幅度: SSIM=0.0001, PSNR=0.0074
+
+正在分析受支持层: body.1.encoder_layers.1.0.blocks.0.0.proj | 类型: Linear
+  -> 掉点幅度: SSIM=0.0000, PSNR=-0.0147
+
+正在分析受支持层: body.1.encoder_layers.1.0.blocks.0.0.pos_emb.0 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0001, PSNR=0.0100
+
+正在分析受支持层: body.1.encoder_layers.1.0.blocks.0.0.pos_emb.2 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0001, PSNR=0.0167
+
+正在分析受支持层: body.1.encoder_layers.1.0.blocks.0.1.fn.net.0 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0009, PSNR=0.0304
+
+正在分析受支持层: body.1.encoder_layers.1.0.blocks.0.1.fn.net.2 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0007, PSNR=-0.0637
+
+正在分析受支持层: body.1.encoder_layers.1.0.blocks.0.1.fn.net.4 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0013, PSNR=-0.0677
+
+正在分析受支持层: body.1.encoder_layers.1.1 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0000, PSNR=-0.0040
+
+正在分析受支持层: body.1.bottleneck.blocks.0.0.to_q | 类型: Linear
+  -> 掉点幅度: SSIM=0.0001, PSNR=0.0138
+
+正在分析受支持层: body.1.bottleneck.blocks.0.0.to_k | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0000, PSNR=-0.0025
+
+正在分析受支持层: body.1.bottleneck.blocks.0.0.to_v | 类型: Linear
+  -> 掉点幅度: SSIM=0.0000, PSNR=-0.0030
+
+正在分析受支持层: body.1.bottleneck.blocks.0.0.proj | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0001, PSNR=-0.0162
+
+正在分析受支持层: body.1.bottleneck.blocks.0.0.pos_emb.0 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0001, PSNR=-0.0000
+
+正在分析受支持层: body.1.bottleneck.blocks.0.0.pos_emb.2 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0001, PSNR=-0.0138
+
+正在分析受支持层: body.1.bottleneck.blocks.0.1.fn.net.0 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0001, PSNR=0.0426
+
+正在分析受支持层: body.1.bottleneck.blocks.0.1.fn.net.2 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0011, PSNR=-0.0845
+
+正在分析受支持层: body.1.bottleneck.blocks.0.1.fn.net.4 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0001, PSNR=-0.0282
+
+正在分析受支持层: body.1.decoder_layers.0.0 | 类型: ConvTranspose2d
+  -> 掉点幅度: SSIM=0.0002, PSNR=-0.0104
+
+正在分析受支持层: body.1.decoder_layers.0.1 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0041, PSNR=0.1162
+
+正在分析受支持层: body.1.decoder_layers.0.2.blocks.0.0.to_q | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0002, PSNR=-0.0002
+
+正在分析受支持层: body.1.decoder_layers.0.2.blocks.0.0.to_k | 类型: Linear
+  -> 掉点幅度: SSIM=0.0000, PSNR=0.0124
+
+正在分析受支持层: body.1.decoder_layers.0.2.blocks.0.0.to_v | 类型: Linear
+  -> 掉点幅度: SSIM=0.0000, PSNR=-0.0209
+
+正在分析受支持层: body.1.decoder_layers.0.2.blocks.0.0.proj | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0002, PSNR=0.0029
+
+正在分析受支持层: body.1.decoder_layers.0.2.blocks.0.0.pos_emb.0 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0001, PSNR=-0.0252
+
+正在分析受支持层: body.1.decoder_layers.0.2.blocks.0.0.pos_emb.2 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0001, PSNR=-0.0013
+
+正在分析受支持层: body.1.decoder_layers.0.2.blocks.0.1.fn.net.0 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0001, PSNR=-0.0412
+
+正在分析受支持层: body.1.decoder_layers.0.2.blocks.0.1.fn.net.2 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0004, PSNR=0.0479
+
+正在分析受支持层: body.1.decoder_layers.0.2.blocks.0.1.fn.net.4 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0001, PSNR=-0.0121
+
+正在分析受支持层: body.1.decoder_layers.1.0 | 类型: ConvTranspose2d
+  -> 掉点幅度: SSIM=-0.0003, PSNR=-0.0257
+
+正在分析受支持层: body.1.decoder_layers.1.1 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0014, PSNR=0.0772
+
+正在分析受支持层: body.1.decoder_layers.1.2.blocks.0.0.to_q | 类型: Linear
+  -> 掉点幅度: SSIM=0.0001, PSNR=-0.0132
+
+正在分析受支持层: body.1.decoder_layers.1.2.blocks.0.0.to_k | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0007, PSNR=-0.0168
+
+正在分析受支持层: body.1.decoder_layers.1.2.blocks.0.0.to_v | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0001, PSNR=-0.0053
+
+正在分析受支持层: body.1.decoder_layers.1.2.blocks.0.0.proj | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0001, PSNR=-0.0191
+
+正在分析受支持层: body.1.decoder_layers.1.2.blocks.0.0.pos_emb.0 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0001, PSNR=0.0024
+
+正在分析受支持层: body.1.decoder_layers.1.2.blocks.0.0.pos_emb.2 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0001, PSNR=0.0091
+
+正在分析受支持层: body.1.decoder_layers.1.2.blocks.0.1.fn.net.0 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0007, PSNR=-0.0029
+
+正在分析受支持层: body.1.decoder_layers.1.2.blocks.0.1.fn.net.2 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0000, PSNR=0.0041
+
+正在分析受支持层: body.1.decoder_layers.1.2.blocks.0.1.fn.net.4 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0004, PSNR=0.0163
+
+正在分析受支持层: body.1.mapping | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0001, PSNR=-0.0001
+
+正在分析受支持层: body.2.embedding | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0011, PSNR=-0.1166
+
+正在分析受支持层: body.2.encoder_layers.0.0.blocks.0.0.to_q | 类型: Linear
+  -> 掉点幅度: SSIM=0.0001, PSNR=0.0033
+
+正在分析受支持层: body.2.encoder_layers.0.0.blocks.0.0.to_k | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0001, PSNR=0.0219
+
+正在分析受支持层: body.2.encoder_layers.0.0.blocks.0.0.to_v | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0001, PSNR=-0.0194
+
+正在分析受支持层: body.2.encoder_layers.0.0.blocks.0.0.proj | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0003, PSNR=-0.0248
+
+正在分析受支持层: body.2.encoder_layers.0.0.blocks.0.0.pos_emb.0 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0001, PSNR=-0.0106
+
+正在分析受支持层: body.2.encoder_layers.0.0.blocks.0.0.pos_emb.2 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0001, PSNR=0.0347
+
+正在分析受支持层: body.2.encoder_layers.0.0.blocks.0.1.fn.net.0 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0004, PSNR=0.0394
+
+正在分析受支持层: body.2.encoder_layers.0.0.blocks.0.1.fn.net.2 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0004, PSNR=-0.0988
+
+正在分析受支持层: body.2.encoder_layers.0.0.blocks.0.1.fn.net.4 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0019, PSNR=0.1124
+
+正在分析受支持层: body.2.encoder_layers.0.1 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0002, PSNR=0.0347
+
+正在分析受支持层: body.2.encoder_layers.1.0.blocks.0.0.to_q | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0002, PSNR=-0.0245
+
+正在分析受支持层: body.2.encoder_layers.1.0.blocks.0.0.to_k | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0002, PSNR=0.0013
+
+正在分析受支持层: body.2.encoder_layers.1.0.blocks.0.0.to_v | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0001, PSNR=-0.0030
+
+正在分析受支持层: body.2.encoder_layers.1.0.blocks.0.0.proj | 类型: Linear
+  -> 掉点幅度: SSIM=0.0001, PSNR=0.0127
+
+正在分析受支持层: body.2.encoder_layers.1.0.blocks.0.0.pos_emb.0 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0003, PSNR=-0.0268
+
+正在分析受支持层: body.2.encoder_layers.1.0.blocks.0.0.pos_emb.2 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0003, PSNR=-0.0019
+
+正在分析受支持层: body.2.encoder_layers.1.0.blocks.0.1.fn.net.0 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0008, PSNR=0.0009
+
+正在分析受支持层: body.2.encoder_layers.1.0.blocks.0.1.fn.net.2 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0002, PSNR=0.0364
+
+正在分析受支持层: body.2.encoder_layers.1.0.blocks.0.1.fn.net.4 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0006, PSNR=-0.0667
+
+正在分析受支持层: body.2.encoder_layers.1.1 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0001, PSNR=0.0020
+
+正在分析受支持层: body.2.bottleneck.blocks.0.0.to_q | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0003, PSNR=0.0001
+
+正在分析受支持层: body.2.bottleneck.blocks.0.0.to_k | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0001, PSNR=-0.0019
+
+正在分析受支持层: body.2.bottleneck.blocks.0.0.to_v | 类型: Linear
+  -> 掉点幅度: SSIM=0.0001, PSNR=0.0001
+
+正在分析受支持层: body.2.bottleneck.blocks.0.0.proj | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0003, PSNR=-0.0044
+
+正在分析受支持层: body.2.bottleneck.blocks.0.0.pos_emb.0 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0005, PSNR=-0.0253
+
+正在分析受支持层: body.2.bottleneck.blocks.0.0.pos_emb.2 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0002, PSNR=0.0218
+
+正在分析受支持层: body.2.bottleneck.blocks.0.1.fn.net.0 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0004, PSNR=-0.0525
+
+正在分析受支持层: body.2.bottleneck.blocks.0.1.fn.net.2 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0004, PSNR=0.0671
+
+正在分析受支持层: body.2.bottleneck.blocks.0.1.fn.net.4 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0003, PSNR=0.0112
+
+正在分析受支持层: body.2.decoder_layers.0.0 | 类型: ConvTranspose2d
+  -> 掉点幅度: SSIM=0.0001, PSNR=0.0041
+
+正在分析受支持层: body.2.decoder_layers.0.1 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0007, PSNR=0.0207
+
+正在分析受支持层: body.2.decoder_layers.0.2.blocks.0.0.to_q | 类型: Linear
+  -> 掉点幅度: SSIM=0.0001, PSNR=-0.0081
+
+正在分析受支持层: body.2.decoder_layers.0.2.blocks.0.0.to_k | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0003, PSNR=-0.0053
+
+正在分析受支持层: body.2.decoder_layers.0.2.blocks.0.0.to_v | 类型: Linear
+  -> 掉点幅度: SSIM=0.0003, PSNR=0.0400
+
+正在分析受支持层: body.2.decoder_layers.0.2.blocks.0.0.proj | 类型: Linear
+  -> 掉点幅度: SSIM=0.0002, PSNR=0.0102
+
+正在分析受支持层: body.2.decoder_layers.0.2.blocks.0.0.pos_emb.0 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0006, PSNR=0.0361
+
+正在分析受支持层: body.2.decoder_layers.0.2.blocks.0.0.pos_emb.2 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0001, PSNR=-0.0008
+
+正在分析受支持层: body.2.decoder_layers.0.2.blocks.0.1.fn.net.0 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0008, PSNR=0.0171
+
+正在分析受支持层: body.2.decoder_layers.0.2.blocks.0.1.fn.net.2 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0005, PSNR=0.0391
+
+正在分析受支持层: body.2.decoder_layers.0.2.blocks.0.1.fn.net.4 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0000, PSNR=0.0017
+
+正在分析受支持层: body.2.decoder_layers.1.0 | 类型: ConvTranspose2d
+  -> 掉点幅度: SSIM=-0.0004, PSNR=-0.0124
+
+正在分析受支持层: body.2.decoder_layers.1.1 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0003, PSNR=-0.0289
+
+正在分析受支持层: body.2.decoder_layers.1.2.blocks.0.0.to_q | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0005, PSNR=0.0158
+
+正在分析受支持层: body.2.decoder_layers.1.2.blocks.0.0.to_k | 类型: Linear
+  -> 掉点幅度: SSIM=-0.0003, PSNR=-0.0346
+
+正在分析受支持层: body.2.decoder_layers.1.2.blocks.0.0.to_v | 类型: Linear
+  -> 掉点幅度: SSIM=0.0002, PSNR=0.0059
+
+正在分析受支持层: body.2.decoder_layers.1.2.blocks.0.0.proj | 类型: Linear
+  -> 掉点幅度: SSIM=0.0003, PSNR=0.0135
+
+正在分析受支持层: body.2.decoder_layers.1.2.blocks.0.0.pos_emb.0 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0001, PSNR=0.0056
+
+正在分析受支持层: body.2.decoder_layers.1.2.blocks.0.0.pos_emb.2 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0003, PSNR=-0.0347
+
+正在分析受支持层: body.2.decoder_layers.1.2.blocks.0.1.fn.net.0 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0001, PSNR=0.0127
+
+正在分析受支持层: body.2.decoder_layers.1.2.blocks.0.1.fn.net.2 | 类型: Conv2d
+  -> 掉点幅度: SSIM=-0.0003, PSNR=0.0374
+
+正在分析受支持层: body.2.decoder_layers.1.2.blocks.0.1.fn.net.4 | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0001, PSNR=0.0313
+
+正在分析受支持层: body.2.mapping | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0002, PSNR=-0.0002
+
+正在分析受支持层: conv_out | 类型: Conv2d
+  -> 掉点幅度: SSIM=0.0036, PSNR=0.0583
+
+分析完成。共测试了 161 个符合白名单规范的网络层。
+>>> 各层敏感度排名 (建议从顶部开始分配较高剪枝率)：
+ 1. body.2.embedding (Conv2d) | 掉点: -0.1177
+ 2. body.2.encoder_layers.0.0.blocks.0.1.fn.net.2 (Conv2d) | 掉点: -0.0992
+ 3. body.1.bottleneck.blocks.0.1.fn.net.2 (Conv2d) | 掉点: -0.0834
+ 4. body.2.encoder_layers.1.0.blocks.0.1.fn.net.4 (Conv2d) | 掉点: -0.0673
+ 5. body.1.encoder_layers.1.0.blocks.0.1.fn.net.4 (Conv2d) | 掉点: -0.0664
+ 6. body.1.encoder_layers.1.0.blocks.0.1.fn.net.2 (Conv2d) | 掉点: -0.0645
+ 7. body.1.encoder_layers.0.0.blocks.0.1.fn.net.4 (Conv2d) | 掉点: -0.0537
+ 8. body.2.bottleneck.blocks.0.1.fn.net.0 (Conv2d) | 掉点: -0.0529
+ 9. body.0.decoder_layers.1.2.blocks.0.1.fn.net.4 (Conv2d) | 掉点: -0.0419
+ 10. body.0.encoder_layers.0.0.blocks.0.1.fn.net.0 (Conv2d) | 掉点: -0.0418
+ 11. body.0.bottleneck.blocks.0.1.fn.net.2 (Conv2d) | 掉点: -0.0412
+ 12. body.1.decoder_layers.0.2.blocks.0.1.fn.net.0 (Conv2d) | 掉点: -0.0410
+ 13. body.2.decoder_layers.1.2.blocks.0.0.pos_emb.2 (Conv2d) | 掉点: -0.0350
+ 14. body.2.decoder_layers.1.2.blocks.0.0.to_k (Linear) | 掉点: -0.0349
+ 15. body.1.encoder_layers.0.0.blocks.0.0.pos_emb.2 (Conv2d) | 掉点: -0.0295
+ 16. body.2.decoder_layers.1.1 (Conv2d) | 掉点: -0.0292
+ 17. body.1.bottleneck.blocks.0.1.fn.net.4 (Conv2d) | 掉点: -0.0281
+ 18. body.2.encoder_layers.1.0.blocks.0.0.pos_emb.0 (Conv2d) | 掉点: -0.0272
+ 19. body.1.decoder_layers.1.0 (ConvTranspose2d) | 掉点: -0.0261
+ 20. body.2.bottleneck.blocks.0.0.pos_emb.0 (Conv2d) | 掉点: -0.0258
+ 21. body.1.decoder_layers.0.2.blocks.0.0.pos_emb.0 (Conv2d) | 掉点: -0.0253
+ 22. body.2.encoder_layers.0.0.blocks.0.0.proj (Linear) | 掉点: -0.0251
+ 23. body.2.encoder_layers.1.0.blocks.0.0.to_q (Linear) | 掉点: -0.0247
+ 24. body.1.encoder_layers.0.1 (Conv2d) | 掉点: -0.0227
+ 25. body.0.decoder_layers.1.1 (Conv2d) | 掉点: -0.0215
+ 26. body.1.decoder_layers.0.2.blocks.0.0.to_v (Linear) | 掉点: -0.0208
+ 27. body.2.encoder_layers.0.0.blocks.0.0.to_v (Linear) | 掉点: -0.0195
+ 28. body.1.decoder_layers.1.2.blocks.0.0.proj (Linear) | 掉点: -0.0192
+ 29. body.1.decoder_layers.1.2.blocks.0.0.to_k (Linear) | 掉点: -0.0176
+ 30. body.1.bottleneck.blocks.0.0.proj (Linear) | 掉点: -0.0162
+ 31. body.0.bottleneck.blocks.0.1.fn.net.0 (Conv2d) | 掉点: -0.0149
+ 32. body.1.encoder_layers.1.0.blocks.0.0.proj (Linear) | 掉点: -0.0147
+ 33. body.1.encoder_layers.0.0.blocks.0.0.proj (Linear) | 掉点: -0.0145
+ 34. body.1.bottleneck.blocks.0.0.pos_emb.2 (Conv2d) | 掉点: -0.0136
+ 35. body.0.encoder_layers.1.0.blocks.0.1.fn.net.0 (Conv2d) | 掉点: -0.0131
+ 36. body.1.decoder_layers.1.2.blocks.0.0.to_q (Linear) | 掉点: -0.0131
+ 37. body.2.decoder_layers.1.0 (ConvTranspose2d) | 掉点: -0.0129
+ 38. body.0.decoder_layers.0.2.blocks.0.1.fn.net.2 (Conv2d) | 掉点: -0.0127
+ 39. body.0.encoder_layers.0.0.blocks.0.1.fn.net.2 (Conv2d) | 掉点: -0.0123
+ 40. body.1.decoder_layers.0.2.blocks.0.1.fn.net.4 (Conv2d) | 掉点: -0.0121
+ 41. body.0.encoder_layers.0.0.blocks.0.0.proj (Linear) | 掉点: -0.0108
+ 42. body.2.encoder_layers.0.0.blocks.0.0.pos_emb.0 (Conv2d) | 掉点: -0.0107
+ 43. body.1.decoder_layers.0.0 (ConvTranspose2d) | 掉点: -0.0103
+ 44. body.0.encoder_layers.1.0.blocks.0.0.proj (Linear) | 掉点: -0.0084
+ 45. body.0.encoder_layers.1.0.blocks.0.0.pos_emb.0 (Conv2d) | 掉点: -0.0083
+ 46. body.0.encoder_layers.0.0.blocks.0.0.pos_emb.2 (Conv2d) | 掉点: -0.0082
+ 47. body.2.decoder_layers.0.2.blocks.0.0.to_q (Linear) | 掉点: -0.0081
+ 48. body.0.encoder_layers.0.0.blocks.0.0.to_k (Linear) | 掉点: -0.0064
+ 49. body.1.encoder_layers.0.0.blocks.0.0.to_v (Linear) | 掉点: -0.0059
+ 50. body.0.bottleneck.blocks.0.0.pos_emb.2 (Conv2d) | 掉点: -0.0057
+ 51. body.0.bottleneck.blocks.0.0.to_k (Linear) | 掉点: -0.0056
+ 52. body.2.decoder_layers.0.2.blocks.0.0.to_k (Linear) | 掉点: -0.0056
+ 53. body.1.decoder_layers.1.2.blocks.0.0.to_v (Linear) | 掉点: -0.0054
+ 54. body.2.bottleneck.blocks.0.0.proj (Linear) | 掉点: -0.0047
+ 55. body.0.decoder_layers.1.0 (ConvTranspose2d) | 掉点: -0.0045
+ 56. body.0.decoder_layers.0.2.blocks.0.0.to_q (Linear) | 掉点: -0.0042
+ 57. body.1.encoder_layers.1.0.blocks.0.0.to_k (Linear) | 掉点: -0.0040
+ 58. body.1.encoder_layers.1.1 (Conv2d) | 掉点: -0.0040
+ 59. body.2.encoder_layers.1.0.blocks.0.0.to_v (Linear) | 掉点: -0.0031
+ 60. body.1.bottleneck.blocks.0.0.to_v (Linear) | 掉点: -0.0030
+ 61. body.0.decoder_layers.0.2.blocks.0.0.proj (Linear) | 掉点: -0.0028
+ 62. body.1.bottleneck.blocks.0.0.to_k (Linear) | 掉点: -0.0025
+ 63. body.0.decoder_layers.1.2.blocks.0.0.pos_emb.2 (Conv2d) | 掉点: -0.0024
+ 64. body.2.encoder_layers.1.0.blocks.0.0.pos_emb.2 (Conv2d) | 掉点: -0.0023
+ 65. body.0.decoder_layers.0.2.blocks.0.0.to_k (Linear) | 掉点: -0.0022
+ 66. body.1.decoder_layers.1.2.blocks.0.1.fn.net.0 (Conv2d) | 掉点: -0.0022
+ 67. body.2.bottleneck.blocks.0.0.to_k (Linear) | 掉点: -0.0020
+ 68. body.0.encoder_layers.0.0.blocks.0.0.to_v (Linear) | 掉点: -0.0016
+ 69. body.0.encoder_layers.0.0.blocks.0.0.to_q (Linear) | 掉点: -0.0011
+ 70. body.1.decoder_layers.0.2.blocks.0.0.pos_emb.2 (Conv2d) | 掉点: -0.0011
+ 71. body.2.decoder_layers.0.2.blocks.0.0.pos_emb.2 (Conv2d) | 掉点: -0.0007
+ 72. body.0.encoder_layers.1.0.blocks.0.0.to_q (Linear) | 掉点: -0.0005
+ 73. body.1.decoder_layers.0.2.blocks.0.0.to_q (Linear) | 掉点: -0.0004
+ 74. body.2.bottleneck.blocks.0.0.to_q (Linear) | 掉点: -0.0002
+ 75. body.0.decoder_layers.0.2.blocks.0.0.to_v (Linear) | 掉点: -0.0001
+ 76. body.1.mapping (Conv2d) | 掉点: 0.0000
+ 77. body.2.mapping (Conv2d) | 掉点: -0.0000
+ 78. body.1.bottleneck.blocks.0.0.pos_emb.0 (Conv2d) | 掉点: 0.0001
+ 79. body.2.bottleneck.blocks.0.0.to_v (Linear) | 掉点: 0.0002
+ 80. body.0.decoder_layers.1.2.blocks.0.0.to_q (Linear) | 掉点: 0.0005
+ 81. body.0.decoder_layers.0.2.blocks.0.0.pos_emb.0 (Conv2d) | 掉点: 0.0009
+ 82. body.2.encoder_layers.1.0.blocks.0.0.to_k (Linear) | 掉点: 0.0011
+ 83. body.0.bottleneck.blocks.0.0.to_v (Linear) | 掉点: 0.0014
+ 84. body.0.decoder_layers.1.2.blocks.0.0.pos_emb.0 (Conv2d) | 掉点: 0.0015
+ 85. body.2.decoder_layers.0.2.blocks.0.1.fn.net.4 (Conv2d) | 掉点: 0.0016
+ 86. body.2.encoder_layers.1.0.blocks.0.1.fn.net.0 (Conv2d) | 掉点: 0.0017
+ 87. body.0.encoder_layers.0.0.blocks.0.0.pos_emb.0 (Conv2d) | 掉点: 0.0018
+ 88. body.2.encoder_layers.1.1 (Conv2d) | 掉点: 0.0018
+ 89. body.1.encoder_layers.0.0.blocks.0.0.to_q (Linear) | 掉点: 0.0019
+ 90. body.1.decoder_layers.1.2.blocks.0.0.pos_emb.0 (Conv2d) | 掉点: 0.0024
+ 91. body.0.decoder_layers.1.2.blocks.0.0.to_k (Linear) | 掉点: 0.0025
+ 92. body.0.encoder_layers.1.0.blocks.0.0.to_k (Linear) | 掉点: 0.0027
+ 93. body.0.decoder_layers.0.2.blocks.0.0.pos_emb.2 (Conv2d) | 掉点: 0.0027
+ 94. body.0.decoder_layers.1.2.blocks.0.0.proj (Linear) | 掉点: 0.0027
+ 95. body.1.decoder_layers.0.2.blocks.0.0.proj (Linear) | 掉点: 0.0028
+ 96. body.0.decoder_layers.1.2.blocks.0.0.to_v (Linear) | 掉点: 0.0030
+ 97. body.2.encoder_layers.0.0.blocks.0.0.to_q (Linear) | 掉点: 0.0033
+ 98. body.1.decoder_layers.1.2.blocks.0.1.fn.net.2 (Conv2d) | 掉点: 0.0042
+ 99. body.2.decoder_layers.0.0 (ConvTranspose2d) | 掉点: 0.0042
+ 100. body.0.encoder_layers.1.0.blocks.0.1.fn.net.4 (Conv2d) | 掉点: 0.0044
+ 101. body.0.encoder_layers.1.1 (Conv2d) | 掉点: 0.0044
+ 102. body.0.bottleneck.blocks.0.0.to_q (Linear) | 掉点: 0.0048
+ 103. body.0.bottleneck.blocks.0.0.pos_emb.0 (Conv2d) | 掉点: 0.0056
+ 104. body.2.decoder_layers.1.2.blocks.0.0.pos_emb.0 (Conv2d) | 掉点: 0.0057
+ 105. body.2.decoder_layers.1.2.blocks.0.0.to_v (Linear) | 掉点: 0.0061
+ 106. body.1.encoder_layers.0.0.blocks.0.0.to_k (Linear) | 掉点: 0.0065
+ 107. body.1.encoder_layers.1.0.blocks.0.0.to_q (Linear) | 掉点: 0.0068
+ 108. body.0.decoder_layers.0.0 (ConvTranspose2d) | 掉点: 0.0073
+ 109. body.1.encoder_layers.1.0.blocks.0.0.to_v (Linear) | 掉点: 0.0075
+ 110. body.0.encoder_layers.1.0.blocks.0.0.to_v (Linear) | 掉点: 0.0081
+ 111. body.0.encoder_layers.1.0.blocks.0.0.pos_emb.2 (Conv2d) | 掉点: 0.0088
+ 112. body.0.bottleneck.blocks.0.0.proj (Linear) | 掉点: 0.0092
+ 113. body.1.decoder_layers.1.2.blocks.0.0.pos_emb.2 (Conv2d) | 掉点: 0.0093
+ 114. body.0.bottleneck.blocks.0.1.fn.net.4 (Conv2d) | 掉点: 0.0094
+ 115. body.1.encoder_layers.1.0.blocks.0.0.pos_emb.0 (Conv2d) | 掉点: 0.0101
+ 116. body.2.decoder_layers.0.2.blocks.0.0.proj (Linear) | 掉点: 0.0104
+ 117. body.1.encoder_layers.0.0.blocks.0.0.pos_emb.0 (Conv2d) | 掉点: 0.0113
+ 118. body.2.bottleneck.blocks.0.1.fn.net.4 (Conv2d) | 掉点: 0.0115
+ 119. body.0.encoder_layers.0.1 (Conv2d) | 掉点: 0.0118
+ 120. body.1.decoder_layers.0.2.blocks.0.0.to_k (Linear) | 掉点: 0.0124
+ 121. body.2.decoder_layers.1.2.blocks.0.1.fn.net.0 (Conv2d) | 掉点: 0.0126
+ 122. body.2.encoder_layers.1.0.blocks.0.0.proj (Linear) | 掉点: 0.0128
+ 123. body.2.decoder_layers.1.2.blocks.0.0.proj (Linear) | 掉点: 0.0138
+ 124. body.1.bottleneck.blocks.0.0.to_q (Linear) | 掉点: 0.0139
+ 125. body.2.decoder_layers.1.2.blocks.0.0.to_q (Linear) | 掉点: 0.0153
+ 126. body.1.decoder_layers.1.2.blocks.0.1.fn.net.4 (Conv2d) | 掉点: 0.0167
+ 127. body.1.encoder_layers.1.0.blocks.0.0.pos_emb.2 (Conv2d) | 掉点: 0.0168
+ 128. body.0.decoder_layers.0.2.blocks.0.1.fn.net.4 (Conv2d) | 掉点: 0.0172
+ 129. body.2.decoder_layers.0.2.blocks.0.1.fn.net.0 (Conv2d) | 掉点: 0.0179
+ 130. body.2.decoder_layers.0.1 (Conv2d) | 掉点: 0.0215
+ 131. body.2.encoder_layers.0.0.blocks.0.0.to_k (Linear) | 掉点: 0.0219
+ 132. body.2.bottleneck.blocks.0.0.pos_emb.2 (Conv2d) | 掉点: 0.0220
+ 133. body.0.encoder_layers.0.0.blocks.0.1.fn.net.4 (Conv2d) | 掉点: 0.0279
+ 134. body.1.encoder_layers.1.0.blocks.0.1.fn.net.0 (Conv2d) | 掉点: 0.0295
+ 135. body.0.decoder_layers.0.2.blocks.0.1.fn.net.0 (Conv2d) | 掉点: 0.0298
+ 136. body.2.decoder_layers.1.2.blocks.0.1.fn.net.4 (Conv2d) | 掉点: 0.0314
+ 137. body.1.encoder_layers.0.0.blocks.0.1.fn.net.2 (Conv2d) | 掉点: 0.0332
+ 138. body.2.encoder_layers.0.0.blocks.0.0.pos_emb.2 (Conv2d) | 掉点: 0.0348
+ 139. body.2.encoder_layers.0.1 (Conv2d) | 掉点: 0.0349
+ 140. body.2.encoder_layers.1.0.blocks.0.1.fn.net.2 (Conv2d) | 掉点: 0.0366
+ 141. body.2.decoder_layers.0.2.blocks.0.0.pos_emb.0 (Conv2d) | 掉点: 0.0367
+ 142. body.2.decoder_layers.1.2.blocks.0.1.fn.net.2 (Conv2d) | 掉点: 0.0371
+ 143. body.2.encoder_layers.0.0.blocks.0.1.fn.net.0 (Conv2d) | 掉点: 0.0390
+ 144. body.2.decoder_layers.0.2.blocks.0.1.fn.net.2 (Conv2d) | 掉点: 0.0396
+ 145. body.2.decoder_layers.0.2.blocks.0.0.to_v (Linear) | 掉点: 0.0403
+ 146. body.1.bottleneck.blocks.0.1.fn.net.0 (Conv2d) | 掉点: 0.0425
+ 147. body.0.decoder_layers.0.1 (Conv2d) | 掉点: 0.0445
+ 148. body.0.encoder_layers.1.0.blocks.0.1.fn.net.2 (Conv2d) | 掉点: 0.0480
+ 149. body.1.decoder_layers.0.2.blocks.0.1.fn.net.2 (Conv2d) | 掉点: 0.0482
+ 150. body.0.decoder_layers.1.2.blocks.0.1.fn.net.0 (Conv2d) | 掉点: 0.0492
+ 151. body.0.decoder_layers.1.2.blocks.0.1.fn.net.2 (Conv2d) | 掉点: 0.0518
+ 152. body.0.mapping (Conv2d) | 掉点: 0.0525
+ 153. conv_out (Conv2d) | 掉点: 0.0619
+ 154. body.2.bottleneck.blocks.0.1.fn.net.2 (Conv2d) | 掉点: 0.0675
+ 155. body.1.decoder_layers.1.1 (Conv2d) | 掉点: 0.0787
+ 156. body.0.embedding (Conv2d) | 掉点: 0.0949
+ 157. body.2.encoder_layers.0.0.blocks.0.1.fn.net.4 (Conv2d) | 掉点: 0.1144
+ 158. body.1.decoder_layers.0.1 (Conv2d) | 掉点: 0.1203
+ 159. body.1.embedding (Conv2d) | 掉点: 0.1244
+ 160. body.1.encoder_layers.0.0.blocks.0.1.fn.net.0 (Conv2d) | 掉点: 0.1848
+ 161. conv_in (Conv2d) | 掉点: 0.5507
