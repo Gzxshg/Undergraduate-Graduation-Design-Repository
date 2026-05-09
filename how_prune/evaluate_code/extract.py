@@ -28,15 +28,15 @@ def generate_pruning_plan(input_filepath, output_filepath):
                 stats["0%"] += 1
             # 规则 2：掉点在 0.02 到 0.1 之间的层，剪枝率 10%
             elif 0.02 < drop_value <= 0.1:
-                ratio = 0.10
+                ratio = 0.1
                 stats["10%"] += 1
             # 规则 3：掉点在 0 到 0.02 之间的层，剪枝率 30%
             elif 0.0 <= drop_value <= 0.02:
-                ratio = 0.30
+                ratio = 0.3
                 stats["30%"] += 1
             # 规则 4：掉点为负数区，剪枝率 50%
             elif drop_value < 0.0:
-                ratio = 0.50
+                ratio = 0.5
                 stats["50%"] += 1
                 
             pruning_plan[layer_name] = ratio
@@ -47,10 +47,10 @@ def generate_pruning_plan(input_filepath, output_filepath):
         
     print(f">>> 剪枝策略生成完毕！已保存至: {output_filepath}")
     print("各梯队层数统计:")
-    print(f"  - 绝对禁区 (0% 剪枝, 掉点 > 0.1): {stats['0%']} 层")
-    print(f"  - 保守区   (10% 剪枝, 掉点 0.02~0.1): {stats['10%']} 层")
-    print(f"  - 激进区   (30% 剪枝, 掉点 0~0.02): {stats['30%']} 层")
-    print(f"  - 免疫区   (50% 剪枝, 掉点 < 0): {stats['50%']} 层")
+    print(f"  - 绝对禁区 (10% 剪枝, 掉点 > 0.1): {stats['0%']} 层")
+    print(f"  - 保守区   (30% 剪枝, 掉点 0.02~0.1): {stats['10%']} 层")
+    print(f"  - 激进区   (50% 剪枝, 掉点 0~0.02): {stats['30%']} 层")
+    print(f"  - 免疫区   (80% 剪枝, 掉点 < 0): {stats['50%']} 层")
 
 if __name__ == "__main__":
     # 输入你现有的敏感度分析文本文件

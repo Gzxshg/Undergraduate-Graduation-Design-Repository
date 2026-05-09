@@ -3,8 +3,8 @@ import torch
 import time
 from architecture import model_generator
 
-pretrained_model_path = '/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/results_and_discussion/model/origin_pruned_finetuned_pruned_finetuned.pth'  # 替换为你的模型路径
-method = 'your_method'  # 替换为你的方法名称
+pretrained_model_path = '/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/how_prune/execute_code/pruned_model/04212106/pruned_clean_model.pth'  # 替换为你的模型路径
+method = 'mst_plus_plus'  # 替换为你的方法名称
 model = model_generator(method, pretrained_model_path).cuda()
 # 1. 准备模型和输入数据（确保都放在相同的设备上）
 model.eval()

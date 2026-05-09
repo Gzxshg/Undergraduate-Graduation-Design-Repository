@@ -28,13 +28,13 @@ class DoubleOutput:
         self.log.flush()
 
 # 绑定到输出
-sys.stdout = DoubleOutput("/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/how_prune/execute_code/pruned_model/04212106/log.txt")
+sys.stdout = DoubleOutput("/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/how_prune/execute_code/pruned_model/05081619/log.txt")
 
 
 with open("/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/how_prune/execute_code/pruning_plan.txt", "r", encoding="utf-8") as f:
     pruning_plan = json.load(f)
 
-pretrained_model_path = "/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/how_prune/model_zoo/net_300epoch.pth"
+pretrained_model_path = "/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/how_prune/model_zoo/net_30epoch.pth"
 method='mst_plus_plus'
 model = model_generator(method,pretrained_model_path)
 
@@ -104,4 +104,4 @@ for name, module in model.named_modules():
         except ValueError:
             pass
 
-torch.save(model.state_dict(), '/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/how_prune/execute_code/pruned_model/04212106/pruned_clean_model.pth')
+torch.save(model.state_dict(), '/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/how_prune/execute_code/pruned_model/05081619/pruned_clean_model.pth')

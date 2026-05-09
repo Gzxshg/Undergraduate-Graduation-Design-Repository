@@ -162,7 +162,7 @@ def run_strict_sensitivity_analysis(model, prune_ratio=0.2, device="cuda"):
 # 4. 执行与规范化配置导出
 # ==========================================
 if __name__ == "__main__":
-    pretrained_model_path = '/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/MST-plus-plus/test_code/modelzoo/net_300epoch.pth'
+    pretrained_model_path = '/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/how_prune/execute_code/pruned_model/05081619/pruned_clean_model.pth'
     method='mst_plus_plus'
     test_model = model_generator(method, pretrained_model_path).cuda()
     test_prune_ratio = 0.20

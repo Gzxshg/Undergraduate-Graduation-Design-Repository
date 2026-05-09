@@ -14,7 +14,7 @@ import datetime
 
 parser = argparse.ArgumentParser(description="Spectral Recovery Toolbox")
 parser.add_argument('--method', type=str, default='mst_plus_plus')
-parser.add_argument('--pretrained_model_path', type=str, default='/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/how_prune/execute_code/pruned_model/04212106/pruned_clean_model.pth')
+parser.add_argument('--pretrained_model_path', type=str, default='/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/how_prune/execute_code/pruned_model/05081619/pruned_clean_model.pth')
 parser.add_argument("--batch_size", type=int, default=20, help="batch size")
 parser.add_argument("--end_epoch", type=int, default=30, help="number of epochs")
 parser.add_argument("--init_lr", type=float, default=2e-5, help="initial learning rate")
@@ -71,17 +71,15 @@ scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, total_iteratio
 # logging
 log_dir = os.path.join(opt.outf, 'train.log')
 logger = initialize_logger(log_dir)
-
+iteration = 300000
+start_epoch = 300
 # Resume
 resume_file = opt.pretrained_model_path
 if resume_file is not None:
     if os.path.isfile(resume_file):
         print("=> loading checkpoint '{}'".format(resume_file))
         checkpoint = torch.load(resume_file)
-        start_epoch = checkpoint['epoch']
-        iteration = checkpoint['iter']
-        model.load_state_dict(checkpoint['state_dict'])
-        optimizer.load_state_dict(checkpoint['optimizer'])
+        model.load_state_dict(checkpoint)
 
 def main():
     cudnn.benchmark = True
