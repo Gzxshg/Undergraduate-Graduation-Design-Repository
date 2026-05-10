@@ -13,9 +13,9 @@ from PIL import Image
 
 parser= argparse.ArgumentParser(description="Spectral Recovery Toolbox")
 parser.add_argument('--method', type=str, default='bisrnet_plus_plus')
-parser.add_argument('--pretrained_model_path', type=str, default='/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/MST-plus-plus/test_code/modelzoo/mst_plus_plus.pth')
+parser.add_argument('--pretrained_model_path', type=str, default='/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/results_and_discussion/model/origin_pruned_finetuned_pruned_finetuned.pth')
 parser.add_argument('--patch_size', type=int, default=128, help='the patch size of input RGB images')
-parser.add_argument('--outf', type=str, default='/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/MST-plus-plus/exp/MST_Plus_Plus/', help='path log files')
+parser.add_argument('--outf', type=str, default='/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/results_and_discussion/model_results/', help='path log files')
 parser.add_argument('--data_root', type=str, default='/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/MST-plus-plus/dataset', help='the path of dataset')
 parser.add_argument('--gpu_id', type=str, default='0', help='path log files')
 opt = parser.parse_args()
