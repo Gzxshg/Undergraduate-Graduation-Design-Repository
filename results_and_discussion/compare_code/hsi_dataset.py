@@ -91,8 +91,6 @@ class ValidDataset(Dataset):
             bgr_list = [line.replace('mat','jpg') for line in hyper_list]
         hyper_list.sort()
         bgr_list.sort()
-        print(f'len(hyper_valid) of ntire2022 dataset:{len(hyper_list)}')
-        print(f'len(bgr_valid) of ntire2022 dataset:{len(bgr_list)}')
         for i in range(len(hyper_list)):
             hyper_path = hyper_data_path + hyper_list[i]
             if 'mat' not in hyper_path:
@@ -115,7 +113,7 @@ class ValidDataset(Dataset):
     def __getitem__(self, idx):
         hyper = self.hypers[idx]
         bgr = self.bgrs[idx]
-        return np.ascontiguousarray(bgr), np.ascontiguousarray(hyper)
+        return np.ascontiguousarray(bgr)
 
     def __len__(self):
         return len(self.hypers)

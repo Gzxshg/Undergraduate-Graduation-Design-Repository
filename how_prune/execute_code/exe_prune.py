@@ -34,7 +34,7 @@ sys.stdout = DoubleOutput("/root/autodl-tmp/Undergraduate-Graduation-Design-Repo
 with open("/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/how_prune/execute_code/pruning_plan.txt", "r", encoding="utf-8") as f:
     pruning_plan = json.load(f)
 
-pretrained_model_path = "/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/how_prune/model_zoo/net_30epoch.pth"
+pretrained_model_path = "/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/results_and_discussion/model/origin_pruned_finetuned_pruned_finetuned.pth"
 method='mst_plus_plus'
 model = model_generator(method,pretrained_model_path)
 

@@ -2,7 +2,7 @@ import torch
 from .MST_Plus_Plus import MST_Plus_Plus
 
 
-def model_generator(method, pretrained_model_path=None):
+def model_generator(method, pretrained_model_path):
 
     if method == 'mst_plus_plus':
         model = MST_Plus_Plus().cuda()

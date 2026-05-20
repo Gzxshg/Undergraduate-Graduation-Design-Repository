@@ -15,9 +15,9 @@ warnings.warn = warn
 
 parser = argparse.ArgumentParser(description="Spectral Recovery Toolbox")
 parser.add_argument('--data_root', type=str, default='/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/MST-plus-plus/dataset')
-parser.add_argument('--method', type=str, default='mst_plus_plus')
-parser.add_argument('--pretrained_model_path', type=str, default='/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/MST-plus-plus/test_code/modelzoo/net_300epoch.pth')
-parser.add_argument('--outf', type=str, default='/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/MST-plus-plus/exp/MST_Plus_Plus/202604202235/')
+parser.add_argument('--method', type=str, default='mprnet')
+parser.add_argument('--pretrained_model_path', type=str, default='/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/results_and_discussion/compare_model/mprnet.pth')
+parser.add_argument('--outf', type=str, default='/')
 parser.add_argument("--gpu_id", type=str, default='0')
 opt = parser.parse_args()
 os.environ["CUDA_DEVICE_ORDER"] = 'PCI_BUS_ID'
@@ -46,8 +46,7 @@ var_name = 'cube'
 def validate(val_loader, model):
     model.eval()
     losses_mrae = AverageMeter()
-    losses_rmse = AverageMeter()
-    losses_psnr = AverageMeter()
+
     for i, (input, target) in enumerate(val_loader):
         input = input.cuda()
         target = target.cuda()
@@ -56,31 +55,17 @@ def validate(val_loader, model):
             if method=='awan':   # To avoid out of memory, we crop the center region as input for AWAN.
                 output = model(input[:, :, 118:-118, 118:-118])
                 loss_mrae = criterion_mrae(output[:, :, 10:-10, 10:-10], target[:, :, 128:-128, 128:-128])
-                loss_rmse = criterion_rmse(output[:, :, 10:-10, 10:-10], target[:, :, 128:-128, 128:-128])
-                loss_psnr = criterion_psnr(output[:, :, 10:-10, 10:-10], target[:, :, 128:-128, 128:-128])
+                
             else:
                 output = model(input)
                 loss_mrae = criterion_mrae(output[:, :, 128:-128, 128:-128], target[:, :, 128:-128, 128:-128])
-                loss_rmse = criterion_rmse(output[:, :, 128:-128, 128:-128], target[:, :, 128:-128, 128:-128])
-                loss_psnr = criterion_psnr(output[:, :, 128:-128, 128:-128], target[:, :, 128:-128, 128:-128])
         # record loss
         losses_mrae.update(loss_mrae.data)
-        losses_rmse.update(loss_rmse.data)
-        losses_psnr.update(loss_psnr.data)
-
-        result = output.cpu().numpy() * 1.0
-        result = np.transpose(np.squeeze(result), [1, 2, 0])
-        result = np.minimum(result, 1.0)
-        result = np.maximum(result, 0)
-        mat_name = hyper_list[i]
-        mat_dir = os.path.join(opt.outf, mat_name)
-        save_matv73(mat_dir, var_name, result)
-    return losses_mrae.avg, losses_rmse.avg, losses_psnr.avg
-
+    return losses_mrae.avg
 if __name__ == '__main__':
     cudnn.benchmark = True
     pretrained_model_path = opt.pretrained_model_path
     method = opt.method
     model = model_generator(method, pretrained_model_path).cuda()
-    mrae, rmse, psnr = validate(val_loader, model)
-    print(f'method:{method}, mrae:{mrae}, rmse:{rmse}, psnr:{psnr}')
+    mrae = validate(val_loader, model)
+    print(f'method:{method}, mrae:{mrae}')

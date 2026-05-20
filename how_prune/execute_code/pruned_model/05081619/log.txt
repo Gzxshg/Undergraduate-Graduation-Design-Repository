@@ -1,4 +1,4 @@
-load model from /root/autodl-tmp/Undergraduate-Graduation-Design-Repository/how_prune/model_zoo/net_30epoch.pth
+load model from /root/autodl-tmp/Undergraduate-Graduation-Design-Repository/results_and_discussion/model/origin_pruned_finetuned_pruned_finetuned.pth
 已对 body.0.embedding 执行剪枝，裁剪率: 10.0%
 已对 body.0.encoder_layers.0.0.blocks.0.0.to_q 执行剪枝，裁剪率: 50.0%
 已对 body.0.encoder_layers.0.0.blocks.0.0.to_k 执行剪枝，裁剪率: 50.0%
@@ -155,4 +155,4 @@ load model from /root/autodl-tmp/Undergraduate-Graduation-Design-Repository/how_
 已对 body.2.decoder_layers.1.2.blocks.0.1.fn.net.4 执行剪枝，裁剪率: 10.0%
 已对 body.2.mapping 执行剪枝，裁剪率: 30.0%
 已对 conv_out 执行剪枝，裁剪率: 10.0%
-剪枝后模型的平均 SSIM: 0.9209, 平均 PSNR: 30.00 dB
+剪枝后模型的平均 SSIM: 0.9306, 平均 PSNR: 30.49 dB

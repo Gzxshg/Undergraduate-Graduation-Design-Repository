@@ -12,10 +12,10 @@ import argparse
 from PIL import Image
 
 parser= argparse.ArgumentParser(description="Spectral Recovery Toolbox")
-parser.add_argument('--method', type=str, default='bisrnet_plus_plus')
-parser.add_argument('--pretrained_model_path', type=str, default='/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/results_and_discussion/model/origin_pruned_finetuned_pruned_finetuned_pruned.pth')
+parser.add_argument('--method', type=str, default='mst_plus_plus', help='the method to be evaluated')
+parser.add_argument('--pretrained_model_path', type=str, default='/')
 parser.add_argument('--patch_size', type=int, default=128, help='the patch size of input RGB images')
-parser.add_argument('--outf', type=str, default='/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/results_and_discussion/model_results/', help='path log files')
+parser.add_argument('--outf', type=str, default='/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/results_and_discussion/model_results_new/6', help='path log files')
 parser.add_argument('--data_root', type=str, default='/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/MST-plus-plus/dataset', help='the path of dataset')
 parser.add_argument('--gpu_id', type=str, default='0', help='path log files')
 opt = parser.parse_args()
@@ -33,14 +33,13 @@ print("\nloading dataset ...")
 test_data = TestDataset(data_root=opt.data_root, crop_size=opt.patch_size, bgr2rgb=True, arg=False)
 print(f"Test set samples: {len(test_data)}")
 from architecture import model_generator
-pretrained_model_path = opt.pretrained_model_path
+pretrained_model_path = '/root/autodl-tmp/Undergraduate-Graduation-Design-Repository/results_and_discussion/model/origin_pruned_finetuned_pruned_finetuned_pruned.pth'
 method = opt.method
-model = model_generator(pretrained_model_path).cuda()
+model = model_generator(method,pretrained_model_path).cuda()
 print('parameters number is ', sum(param.numel() for param in model.parameters()))
 
 datetime = str(datetime.datetime.now())
 date_time = time2file_name(datetime)
-opt.outf = opt.outf + date_time
 if not os.path.exists(opt.outf):
     os.makedirs(opt.outf)
 
@@ -63,5 +62,5 @@ with torch.no_grad():
         save_path = opt.outf + '/' + array[i] + '.mat'
         from scipy.io import savemat
         savemat(save_path, {'result': res})
-        
-            
+
+print('outfolder is ', opt.outf)
